@@ -70,6 +70,9 @@ html::-webkit-scrollbar-thumb{
 .data a.data-block:hover{
     box-shadow: rgba(198,197,197,0.9) 5px 5px 20px;
 }
+.data .container section h3{
+    text-indent: 1em;
+}
 footer{
     color: #fff;
     background-color:#20283C;

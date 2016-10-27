@@ -1,0 +1,207 @@
+html,body{
+    height: 100%;
+    background-color: #e9f0f5;
+}
+body{
+	color: #5a5a5a;
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+	padding-top: 51px;
+	font-family: Lato, "Heiti SC", "Hiragino Sans GB", STHeiti, "Source Han Sans CN", "WenQuanYi Zen Hei", "WenQuanYi Micro Hei", MicroSoft YaHei, sans-serif;
+}
+html::-webkit-scrollbar{
+    width:8px;
+    background-color:#ddd;
+    transition: all ease-in-out 0.5s;
+}
+html::-webkit-scrollbar-thumb{
+    background-color:#aaa;
+    border-radius:3px;
+}
+.hovernav:hover{
+	background:#B46969;
+}
+.bar{
+    width: 30px;
+    height: 2px;
+    border: medium none;
+    background: none repeat scroll 0% 0% #5A2929;
+    margin: 20px auto;
+}
+.site-warpper{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+    background-image: url(../images/about-background.jpg);
+}
+.site-warpper .container{
+    margin: 0 auto 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29, 26, 33,0.6);
+}
+.site-warpper .container .col-md-7{
+    color: white;
+    padding-top: 15em;
+}
+.site-warpper .container .col-md-7 p{
+    font-size: 2.1em;
+}
+.site-warpper .container .col-md-5{
+    padding: 1em;
+}
+.site-warpper .container .col-md-5 .register-card{
+    padding: 1em;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.6);
+}
+.site-warpper .container .col-md-5 .register-card h3{
+    margin-top: 10px;
+}
+@media screen and (min-width: 991px){
+    .site-warpper .container .col-md-5{
+        padding: 3em 4em;
+    }
+    .site-warpper .container .col-md-5 .register-card{
+        padding: 2em 3em;
+    }
+    .site-warpper .container .col-md-5 .register-card h3{
+        margin-top: 20px;
+    }
+    .site-warpper .container .col-md-5 .register-card hr{
+        margin-bottom: 40px;
+    }
+    .site-warpper .container .col-md-5 .register-card .form-group{
+        padding-bottom: 10px;
+    }
+}
+.site-warpper .container .col-md-5 .register-card .form-group{
+    padding-bottom: 5px;
+    position: relative;
+}
+.site-warpper .container .col-md-5 .register-card .form-group button{
+    transition:all ease-in-out .2s;
+}
+.site-warpper .container .col-md-5 .register-card .floating-label{
+    color: rgba(0,0,0,.38);
+    cursor: text;
+    font-size: 14px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 11px;
+    left: 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    transition-duration: .3s;
+    -webkit-transition-property: color,-webkit-transform;
+    transition-property: color,-webkit-transform;
+    transition-property: color,transform;
+    transition-property: color,transform,-webkit-transform;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+.site-warpper .container .col-md-5 .register-card .floating-label.on-focus{
+    -webkit-transform:translateY(-24px) scale(1.2);
+    transform:translateY(-24px) scale(1.2);
+    color: #ff4081;
+}
+.site-warpper .container .col-md-5 .register-card .floating-label.inputed{
+    -webkit-transform:translateY(-24px) scale(1.2);
+    transform:translateY(-24px) scale(1.2);
+}
+.site-warpper .container .col-md-5 .register-card .floating-control{
+    outline: none;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    border-radius: 0;
+    color: inherit;
+    display: block;
+    font-size: 14px;
+    height: 36px;
+    line-height: 20px;
+    padding: 8px 0 7px;
+    width: 100%;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    transition:all 0.3s ease-in-out;
+    transition-duration: .3s;
+    -webkit-transition-property: color,-webkit-transform;
+    transition-property: color,-webkit-transform;
+    transition-property: color,transform;
+    transition-property: color,transform,-webkit-transform;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+.site-warpper .container .col-md-5 .register-card input.on-focus{
+    outline: none;
+    border-bottom: 1px solid #ff4081;
+}
+.site-warpper .container .col-md-5 .register-card input.inputed{
+    outline: none;
+}
+footer{
+    color: #fff;
+    background-color:#20283C;
+}
+footer .container-fluid .container{
+    margin: 0 auto 0;
+    padding: 60px 0 10px;
+    background-color: #20283C;
+}
+footer .container-fluid .container h3{
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+footer .container-fluid .container ul{
+    margin: 10px 0;
+}
+footer .container-fluid .container ul li{
+    font-size: 15px;
+    padding-top: 3px;
+}
+footer .container-fluid .container a{
+    color: #fff;
+    text-decoration: none;
+}
+footer .container-fluid .container a:hover{
+    color: #1B9FC3;
+}
+footer .copyright{
+    margin-top: 30px;
+    color: white;
+}
+#back-to-top{
+    border-radius: 50%;
+    box-shadow: 5px 5px 5px #ccc;
+    transition: all ease-in-out 0.5s;
+    opacity: 0.7;
+    display: none;
+    width: 40px;
+    height: 40px;
+    font-size: 26px;
+    line-height: 32px;
+    font-family: verdana, arial;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    _position: absolute;
+    bottom: 100px;
+    _bottom: "auto";
+    cursor: pointer;
+    opacity: .6;
+    filter: Alpha(opacity=60);
+    right: 50px;
+}
+#back-to-top:hover{
+    box-shadow: 5px 5px 15px #ccc;
+    opacity: 1;
+}

@@ -240,10 +240,10 @@ html::-webkit-scrollbar-thumb{
 }
 .joinus{
     background-color: #CEC8C8;
-    padding: 5em 5em;
+    padding: 15px 5px;
 }
 .joinus a.btn{
-    padding: 1em 4em;
+    padding: 1em 0.5em;
     background-color: #FF4351;
     border-color: #FF4351;
     color: #FFF;
@@ -263,6 +263,14 @@ html::-webkit-scrollbar-thumb{
 }
 .joinus a.btn:hover{
     opacity: .8;
+}
+@media screen and (min-width: 776px){
+    .joinus{
+        padding: 3em 5em;
+    }
+    .joinus a.btn{
+        padding: 1em 4em;
+    }
 }
 @media screen and (min-width: 1170px){
     .timeline .timeline-container .timeline-block .timeline-pic{
