@@ -27,89 +27,48 @@ html::-webkit-scrollbar-thumb{
     width: 30px;
     height: 2px;
     border: medium none;
-    background: none repeat scroll 0% 0% #fff;
+    background: none repeat scroll 0% 0% #5A2929;
     margin: 20px auto;
 }
-.blog-head{
-    background-color: #21282E;
-    color: #FFFFFF;
-    margin-bottom: 0px;
-    padding: 7em 0 3em;
+.data-head{
+    background-image: url(../images/field-background.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: white;
+    margin-bottom: 0;
 }
-.blog-head p{
-    font-size: 2em;
+.slogan{
+    padding: 18px 0px 18px;
+    background: #F2E4E4;
+    color: #B46969;
 }
-.blog-head p .blog-title{
-    font-size: 50px;
-    line-height: 50px;
-    letter-spacing: 2px;
-    background: #E32D40 none repeat scroll 0% 0%;
-    border-radius: 5px;
-    padding: 10px 25px 10px;
+.data{
+    padding: 3em 0;
+    background-color: #E7E4E4;
 }
-.blog-head h4{
-    margin: 2em 0 0;
-    color:#687E91
-}
-.blogger{
-    background-color: #EAE7E7;
-    padding: 50px 0 30px;
-}
-.blogger .container .blogger-block{
-    /*box-shadow: 0 0 10px #B1B0B0;*/
-    overflow: hidden;
-    margin-bottom: 50px;
-    border-radius: 5px;
-    background: none repeat scroll 0% 0% #FFF;
-    border: 30px solid #FFF;
-    /*padding-bottom: 20px;*/
-    padding:0 2em 1em;
+.data a.data-block{
+    /*cursor: pointer;*/
+    outline: none;
+    border: none;
+    padding-top: 5px;
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     -webkit-transition-property: all;
     transition-property: all;
     -webkit-transition-duration: .3s;
     transition-duration: .3s;
-    transition:all ease-in-out .3s;
 }
-.blogger .container .blogger-block:hover{
-    -webkit-box-shadow: 0 0 30px #bbb;
-    box-shadow: 0 0 30px #bbb;
+.data a.data-block img{
+    /*position: absolute;*/
+    /*clip:rect(30px 150px 200px 50px);*/
+    overflow: hidden;
+    max-width: 250px;
+    max-height: 140px;
 }
-.blogger .container .blogger-block blockquote{
-    background-color: #F0F0F0;
-    border-left: 5px solid #ccc;
-}
-.blogger .container h1 a{
-    color: #5A5A5A;
-    font-size: 40px;
-    text-decoration: none;
-    -webkit-transition-property: all;
-    transition-property: all;
-    -webkit-transition-duration: .1s;
-    transition-duration: .1s;
-    transition:all ease-in-out .1s;
-}
-.blogger .container h1 a:hover{
-    color: #E32D40;
-}
-.blogger .container a.btn{
-    background-color: #7B72E9;
-    border-color: #7B72E9;
-    color: #FFF;
-    font-size: 12px;
-    height: 30px;
-    line-height: 30px;
-    /*padding: 0 30px;*/
-    padding: 0 2em;
-    -webkit-transition-property: all;
-    transition-property: all;
-    -webkit-transition-duration: .1s;
-    transition-duration: .1s;
-    transition:all ease-in-out .1s;
-}
-.blogger .container a.btn:hover{
-    background-color: #a49ef0;
-    border-color: #a49ef0;
-    color: #FFF;
+.data a.data-block:hover{
+    box-shadow: rgba(198,197,197,0.9) 5px 5px 20px;
 }
 footer{
     color: #fff;
