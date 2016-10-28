@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AntClub</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/register.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container text-center">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/" class="navbar-brand"><strong>蚂蚁學社</strong></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-toggle">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">主页</a></li>
+            <li class="hovernav"><a href="/blog">博客</a></li>
+            <li class="hovernav"><a href="/data">资料</a></li>
+            <li class="hovernav"><a href="/about">关于</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/register"><span class="glyphicon glyphicon-tower" aria-hidden="true"></span>&nbsp;注册</a></li>
+            <li><a href="/login"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp;登陆</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="site-warpper">
+      <div class="container row">
+        <div class="col-md-7 text-center hidden-xs">
+          <p class="lead">加入蚂蚁学社，与千万学霸一起<br><br><strong>定当不负所托</strong></p>
+        </div>
+        <div class="col-md-5 col-sm-12">
+          <!-- form -->
+          <div class="register-card">
+            <h3 class="text-center">现在登陆</h3>
+            <hr>
+            <form action="" role="form" method="post">
+              <div class="form-group">
+                <label for="email" class="floating-label">邮箱</label>
+                <input type="email" class="floating-control" id="email">
+              </div>
+              <div class="form-group">
+                <label for="password" class="floating-label">密码</label>
+                <input type="password" class="floating-control" id="password">
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-default btn-block btn-primary">登陆</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="container row">
+          <div class="col-md-4 text-left">
+            <h3>联系我们</h3>
+            <ul class="list-unstyled">
+              <li>Email:<a href="mailto:1106911190@qq.com?subject=feedback" "email me">1106911190@qq.com</a></li>
+              <li>RENREN:<a href="http://www.baidu.com" title="蚂蚁学社">蚂蚁学社</a></li>
+              <li>QQ:1106911190</li>
+              <li>地址：陕西省西安市西安电子科技大学长安校区</li>
+            </ul>
+          </div>
+          <div class="col-md-4 text-left">
+            <h3>本站链接</h3>
+            <ul class="list-unstyled">
+              <li><a href="/blog">蚂蚁博客</a></li>
+              <li><a href="/data">蚂蚁资料</a></li>
+              <li><a href="/about">关于我们</a></li>
+              <li><a href="/register">加入我们</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <img src="images/qrcode.jpg" alt="qrcode" class="img-responsive">
+          </div>
+          <div class="col-md-12 text-center copyright">
+          <hr>
+            <p class="small">All RIGHT RESERVED , Build By <a href="https://windard.com">Windard</a> </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="back-to-top" class="hidden-xs">▲</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+    $(document).ready(function($) {
+      $("input").focus(function(event) {
+        $(this).prev().addClass("on-focus");
+        $(this).addClass("on-focus");
+      });
+      $("input").blur(function(event) {
+        if($(this).val()){
+          $(this).prev().removeClass("on-focus");
+          $(this).removeClass("on-focus");
+          $(this).prev().addClass("inputed");
+          $(this).addClass("inputed");
+        }else{
+          $(this).prev().removeClass("on-focus");
+          $(this).removeClass("on-focus");
+          $(this).prev().removeClass("inputed");
+          $(this).removeClass("inputed");
+        }
+      });
+    });
+    </script>
+  </body>
+</html>
