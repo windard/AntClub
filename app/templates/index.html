@@ -7,8 +7,8 @@
     <title>AntClub</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -85,7 +85,7 @@
         <div class="bar"></div>
         <div class="col-md-6 row">
           <div class="col-md-4">
-            <img src="images/discover.png" alt="discover" class="img-responsive">
+            <img src="{{url_for('static', filename='images/discover.png')}}" alt="discover" class="img-responsive">
           </div>
           <div class="col-md-8">
             <h3>探索</h3>
@@ -94,7 +94,7 @@
         </div>
         <div class="col-md-6 row">
           <div class="col-md-4">
-            <img src="images/engineer.png" alt="discover" class="img-responsive">
+            <img src="{{url_for('static', filename='images/engineer.png')}}" alt="discover" class="img-responsive">
           </div>
           <div class="col-md-8">
             <h3>学习</h3>
@@ -103,7 +103,7 @@
         </div>
         <div class="col-md-6 row">
           <div class="col-md-4">
-            <img src="images/planning.png" alt="discover" class="img-responsive">
+            <img src="{{url_for('static', filename='images/planning.png')}}" alt="discover" class="img-responsive">
           </div>
           <div class="col-md-8">
             <h3>策划</h3>
@@ -112,7 +112,7 @@
         </div>
         <div class="col-md-6 row">
           <div class="col-md-4">
-            <img src="images/growth.png" alt="discover" class="img-responsive">
+            <img src="{{url_for('static', filename='images/growth.png')}}" alt="discover" class="img-responsive">
           </div>
           <div class="col-md-8">
             <h3>成长</h3>
@@ -132,10 +132,10 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner hidden-xs hidden-sm" role="listbox">
         <div class="item active">
-          <img src="images/barback.jpg" alt="barback">
+          <img src="{{url_for('static', filename='images/barback.jpg')}}" alt="barback">
           <div class="carousel-caption row">
             <div class="col-md-4">
-              <img src="images/team_mate.jpg" alt="" class="img-circle img-responsive">
+              <img src="{{url_for('static', filename='images/team_mate.jpg')}}" alt="" class="img-circle img-responsive">
             </div>
             <div class="col-md-8">
               <p class="lead">“加入扎堆一年来，本以为扎堆是一个学霸密集，高度紧张的组织，相反，这里有的更多是自由，融洽和友善。这里不拘泥于形式，不用为了完成任务而刷夜，这里有一群有趣的人，一群既能一起学又能一起闹的小伙伴.”
@@ -145,10 +145,10 @@
           </div>
         </div>
         <div class="item">
-          <img src="images/barback.jpg" alt="barback">
+          <img src="{{url_for('static', filename='images/barback.jpg')}}" alt="barback">
         <div class="carousel-caption row">
           <div class="col-md-4">
-            <img src="images/team_mate.jpg" alt="" class="img-circle img-responsive">
+            <img src="{{url_for('static', filename='images/team_mate.jpg')}}" alt="" class="img-circle img-responsive">
           </div>
           <div class="col-md-8">
             <p class="lead">“加入扎堆一年来，本以为扎堆是一个学霸密集，高度紧张的组织，相反，这里有的更多是自由，融洽和友善。这里不拘泥于形式，不用为了完成任务而刷夜，这里有一群有趣的人，一群既能一起学又能一起闹的小伙伴.”
@@ -158,10 +158,10 @@
         </div>
         </div>
         <div class="item">
-          <img src="images/barback.jpg" alt="barback">
+          <img src="{{url_for('static', filename='images/barback.jpg')}}" alt="barback">
         <div class="carousel-caption row">
           <div class="col-md-4">
-            <img src="images/team_mate.jpg" alt="" class="img-circle img-responsive">
+            <img src="{{url_for('static', filename='images/team_mate.jpg')}}" alt="" class="img-circle img-responsive">
           </div>
           <div class="col-md-8">
             <p class="lead">“加入扎堆一年来，本以为扎堆是一个学霸密集，高度紧张的组织，相反，这里有的更多是自由，融洽和友善。这里不拘泥于形式，不用为了完成任务而刷夜，这里有一群有趣的人，一群既能一起学又能一起闹的小伙伴.”
@@ -249,7 +249,7 @@
             </ul>
           </div>
           <div class="col-md-2">
-            <img src="images/qrcode.jpg" alt="qrcode" class="img-responsive">
+            <img src="{{url_for('static', filename='images/qrcode.jpg')}}" alt="qrcode" class="img-responsive">
           </div>
           <div class="col-md-12 text-center copyright">
           <hr>
@@ -257,12 +257,12 @@
           </div>
         </div>
       </div>
-    <div id="back-to-top" class="hidden-xs">▲</div>
     </footer>
+    <div id="back-to-top" class="hidden-xs">▲</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="{{url_for('static', filename='js/jquery-1.11.3.min.js')}}"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/index.js')}}"></script>
   </body>
 </html>

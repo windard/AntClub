@@ -7,8 +7,8 @@
     <title>AntClub</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/register.css')}}">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -43,58 +43,37 @@
         </div>
       </div>
     </nav>
-    <div class="admin-head">
+    <div class="site-warpper">
       <div class="container row">
-        <div class="col-md-3">
-          <div class="admin-avatar">
-            <img src="images/team_mate.jpg" alt="" class="img-responsive img-circle">
-          </div>
+        <div class="col-md-7 text-center hidden-xs">
+          <p class="lead">加入蚂蚁学社，与千万学霸一起<br><br><strong>定当不负所托</strong></p>
         </div>
-        <div class="admin-name col-md-6">
-          <h3>windard</h3>
-          <p>但行好事，莫问前程</p>
-          <p><small>加入于 2016/10/12</small></p>
-        </div>
-      </div>
-    </div>
-    <div class="admin-body">
-      <div class="container row">
-        <div class="col-md-3 admin-nav">
-            <div class="list-group">
-              <a href="#" class="list-group-item">个人设置</a>
-              <a href="#" class="list-group-item"><span class="badge">3</span>已写文章</a>
-              <a href="#" class="list-group-item">撰写文章</a>
-              <a href="#" class="list-group-item"><span class="badge">8</span>已发资料</a>
-              <a href="#" class="list-group-item">发布资料</a>
-            </div>
-        </div>
-        <div class="col-md-9 admin-content">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <div class="panel-title">发表文章：<h3>我的第一篇文章</h3></div>
-            </div>
-            <div class="panel-body">
-              <p>这是第一篇文章的内容，这个内容需要摘要么？应该还是需要的就像外面看到的一样。但是。。。</p>
-              <p>这个摘要是怎么回事的呢。</p>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <div class="panel-title">发表文章：<h3>我的第一篇文章</h3></div>
-            </div>
-            <div class="panel-body">
-              <p>这是第一篇文章的内容，这个内容需要摘要么？应该还是需要的就像外面看到的一样。但是。。。</p>
-              <p>这个摘要是怎么回事的呢。</p>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <div class="panel-title">发表文章：<h3>我的第一篇文章</h3></div>
-            </div>
-            <div class="panel-body">
-              <p>这是第一篇文章的内容，这个内容需要摘要么？应该还是需要的就像外面看到的一样。但是。。。</p>
-              <p>这个摘要是怎么回事的呢。</p>
-            </div>
+        <div class="col-md-5 col-sm-12">
+          <!-- form -->
+          <div class="register-card">
+            <h3 class="text-center">立即注册</h3>
+            <hr>
+            <form action="" role="form" method="post" autocomplete="off">
+              <div class="form-group">
+                <label for="nickname" class="floating-label">昵称</label>
+                <input type="text" class="floating-control" id="nickname">
+              </div>
+              <div class="form-group">
+                <label for="email" class="floating-label">邮箱</label>
+                <input type="email" class="floating-control" id="email">
+              </div>
+              <div class="form-group">
+                <label for="password" class="floating-label">密码</label>
+                <input type="password" class="floating-control" id="password">
+              </div>
+              <div class="form-group">
+                <label for="repassword" class="floating-label">重复密码</label>
+                <input type="password" class="floating-control" id="repassword">
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-default btn-block btn-primary">注册</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -121,7 +100,7 @@
             </ul>
           </div>
           <div class="col-md-2">
-            <img src="images/qrcode.jpg" alt="qrcode" class="img-responsive">
+            <img src="{{url_for('static', filename='images/qrcode.jpg')}}" alt="qrcode" class="img-responsive">
           </div>
           <div class="col-md-12 text-center copyright">
           <hr>
@@ -132,9 +111,30 @@
     </footer>
     <div id="back-to-top" class="hidden-xs">▲</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="{{url_for('static', filename='js/jquery-1.11.3.min.js')}}"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/index.js')}}"></script>
+    <script>
+    $(document).ready(function($) {
+      $("input").focus(function(event) {
+        $(this).prev().addClass("on-focus");
+        $(this).addClass("on-focus");
+      });
+      $("input").blur(function(event) {
+        if($(this).val()){
+          $(this).prev().removeClass("on-focus");
+          $(this).removeClass("on-focus");
+          $(this).prev().addClass("inputed");
+          $(this).addClass("inputed");
+        }else{
+          $(this).prev().removeClass("on-focus");
+          $(this).removeClass("on-focus");
+          $(this).prev().removeClass("inputed");
+          $(this).removeClass("inputed");
+        }
+      });
+    });
+    </script>
   </body>
 </html>

@@ -33,7 +33,7 @@ html::-webkit-scrollbar-thumb{
 .area{
     color:white;
     margin-bottom: 0;
-    background-image: url(../images/star.jpg);
+    background-image: url("../images/star.jpg");
     -webkit-background-size: cover;
     background-size: cover;
     padding-top: 260px;
@@ -50,7 +50,7 @@ html::-webkit-scrollbar-thumb{
     -webkit-background-size: cover;
     background-size: cover;
     overflow: hidden;
-    background-image: url(../images/sun-raise.jpg);
+    background-image: url("{{url_for('static', filename='images/sun-raise')}"}.jpg);
 }
 .aboutus .container .main{
     padding: 20px 30px;

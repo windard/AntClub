@@ -34,7 +34,7 @@ html::-webkit-scrollbar-thumb{
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center;
-    background-image: url(../images/wallpaper-night-high-resolution-comes-lucasitodev-263262.jpg);
+    background-image: url("../images/wallpaper-night-high-resolution-comes-lucasitodev-263262.jpg");
 }
 .admin-head .container{
     color: #fff;

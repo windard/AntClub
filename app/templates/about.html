@@ -7,8 +7,8 @@
     <title>AntClub</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/about.css')}}">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -69,7 +69,7 @@
       <div class="timeline-container">
         <div class="timeline-block">
           <div class="timeline-pic">
-            <img src="images/cd-icon-picture.svg" alt="" class="img-responsive">
+            <img src="{{url_for('static', filename='images/cd-icon-picture.svg')}}" alt="" class="img-responsive">
           </div>
           <div class="timeline-content">
             <h2>开始</h2>
@@ -79,7 +79,7 @@
         </div>
         <div class="timeline-block">
           <div class="timeline-pic"  style="background-color:#38f3ec">
-            <img src="images/cd-icon-movie.svg" alt="" class="img-responsive">
+            <img src="{{url_for('static', filename='images/cd-icon-movie.svg')}}" alt="" class="img-responsive">
           </div>
           <div class="timeline-content">
             <h2>发展</h2>
@@ -89,7 +89,7 @@
         </div>
         <div class="timeline-block">
           <div class="timeline-pic" style="background-color:#f0ca45;">
-            <img src="images/cd-icon-location.svg" alt="" class="img-responsive">
+            <img src="{{url_for('static', filename='images/cd-icon-location.svg')}}" alt="" class="img-responsive">
           </div>
           <div class="timeline-content">
             <h2>国创</h2>
@@ -99,7 +99,7 @@
         </div>
         <div class="timeline-block">
           <div class="timeline-pic timeline-movie">
-            <img src="images/star.svg" alt="" class="img-responsive">
+            <img src="{{url_for('static', filename='images/star.svg')}}" alt="" class="img-responsive">
           </div>
           <div class="timeline-content">
             <h2>成熟</h2>
@@ -179,7 +179,7 @@
             </ul>
           </div>
           <div class="col-md-2">
-            <img src="images/qrcode.jpg" alt="qrcode" class="img-responsive">
+            <img src="{{url_for('static', filename='images/qrcode.jpg')}}" alt="qrcode" class="img-responsive">
           </div>
           <div class="col-md-12 text-center copyright">
           <hr>
@@ -190,9 +190,9 @@
     </footer>
     <div id="back-to-top" class="hidden-xs">▲</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="{{url_for('static', filename='js/jquery-1.11.3.min.js')}}"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/index.js')}}"></script>
   </body>
 </html>

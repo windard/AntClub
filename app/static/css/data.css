@@ -31,7 +31,7 @@ html::-webkit-scrollbar-thumb{
     margin: 20px auto;
 }
 .data-head{
-    background-image: url(../images/field-background.jpg);
+    background-image: url("../images/field-background.jpg");
     -webkit-background-size: cover;
     background-size: cover;
     color: white;
