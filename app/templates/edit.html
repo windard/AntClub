@@ -8,7 +8,7 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/admin.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/edit.css')}}">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -43,67 +43,22 @@
         </div>
       </div>
     </nav>
-    <div class="admin-head">
-      <div class="container row">
-        <div class="col-md-3">
-          <div class="admin-avatar">
-            <img src="{{url_for('static', filename='images/team_mate.jpg')}}" alt="" class="img-responsive img-circle">
-          </div>
+    <div class="fixed sidebar-menu">
+      <div class="sidebar-menu-inner">
+        <div class="sidebar-nav">
+          |||
         </div>
-        <div class="admin-name col-md-6">
-          <h3>windard</h3>
-          <p>但行好事，莫问前程</p>
-          <p><small>加入于 2016/10/12</small></p>
-        </div>
-      </div>
-    </div>
-    <div class="admin-body">
-      <div class="container row">
-        <div class="col-md-3 admin-nav">
-            <div class="list-group">
-              <a href="#" class="list-group-item">个人设置</a>
-              <a href="#" class="list-group-item"><span class="badge">3</span>已写文章</a>
-              <a href="#" class="list-group-item active">撰写文章</a>
-              <a href="#" class="list-group-item"><span class="badge">8</span>已发资料</a>
-              <a href="#" class="list-group-item">发布资料</a>
-            </div>
-        </div>
-        <div class="col-md-9 admin-content">
-          
+        <div class="sidebar-body">
+          <ul class="sidebar-menu-nav list-unstyled">
+            <li><a href="/"><span class="glyphicon glyphicon-user"></span>用户中心</a></li>
+            <li><a href="/"><span class="glyphicon glyphicon-user"></span>用户中心</a></li>
+            <li><a href="/"><span class="glyphicon glyphicon-user"></span>用户中心</a></li>
+            <li><a href="/"><span class="glyphicon glyphicon-user"></span>用户中心</a></li>
+            <li><a href="/"><span class="glyphicon glyphicon-user"></span>用户中心</a></li>
+          </ul>
         </div>
       </div>
     </div>
-    <footer class="footer">
-      <div class="container-fluid">
-        <div class="container row">
-          <div class="col-md-4 text-left">
-            <h3>联系我们</h3>
-            <ul class="list-unstyled">
-              <li>Email:<a href="mailto:1106911190@qq.com?subject=feedback" "email me">1106911190@qq.com</a></li>
-              <li>RENREN:<a href="http://www.baidu.com" title="蚂蚁学社">蚂蚁学社</a></li>
-              <li>QQ:1106911190</li>
-              <li>地址：陕西省西安市西安电子科技大学长安校区</li>
-            </ul>
-          </div>
-          <div class="col-md-4 text-left">
-            <h3>本站链接</h3>
-            <ul class="list-unstyled">
-              <li><a href="/blog">蚂蚁博客</a></li>
-              <li><a href="/data">蚂蚁资料</a></li>
-              <li><a href="/about">关于我们</a></li>
-              <li><a href="/register">加入我们</a></li>
-            </ul>
-          </div>
-          <div class="col-md-2">
-            <img src="{{url_for('static', filename='images/qrcode.jpg')}}" alt="qrcode" class="img-responsive">
-          </div>
-          <div class="col-md-12 text-center copyright">
-          <hr>
-            <p class="small">All RIGHT RESERVED , Build By <a href="https://windard.com">Windard</a> </p>
-          </div>
-        </div>
-      </div>
-    </footer>
     <div id="back-to-top" class="hidden-xs">▲</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="{{url_for('static', filename='js/jquery-1.11.3.min.js')}}"></script>

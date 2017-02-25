@@ -1,11 +1,19 @@
 # coding=utf-8
 
 from flask import Blueprint
-# from ..models import Permission
+from ..models import Permission
+from .. import db
+from ..models import Role
 
 main = Blueprint('main', __name__)
 from . import views, errors
 
-# @main.app_context_processor
-# def inject_permissions():
-# 	return dict(Permission=Permission)
+@main.before_app_first_request
+def create_database():
+	print "create_database once"
+	db.create_all()
+	Role.insert_roles()
+
+@main.app_context_processor
+def inject_permissions():
+	return dict(Permission=Permission)

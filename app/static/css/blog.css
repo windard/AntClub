@@ -36,12 +36,16 @@ html::-webkit-scrollbar-thumb{
     margin-bottom: 0px;
     padding: 7em 0 3em;
 }
+@media screen and (min-width: 1170px){
+    .blog-head p .blog-title{
+        font-size: 50px;
+        line-height: 50px;
+    }
+}
 .blog-head p{
-    font-size: 2em;
+   font-size: 2em;
 }
 .blog-head p .blog-title{
-    font-size: 50px;
-    line-height: 50px;
     letter-spacing: 2px;
     background: #E32D40 none repeat scroll 0% 0%;
     border-radius: 5px;

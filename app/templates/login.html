@@ -52,18 +52,32 @@
           <!-- form -->
           <div class="register-card">
             <h3 class="text-center">现在登陆</h3>
-            <hr>
+            <hr>            
+            {% for category, message in get_flashed_messages(with_categories=true) %}
+              <div class="alert alert-{{ category }} fade in" role="{{ category }}" style="margin-top:10px">
+                {{ message }}
+                <button type="button" class="close" aria-label="Close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+              </div>
+            {% endfor %}
+
             <form action="" role="form" method="post" autocomplete="off">
-              <div class="form-group">
+              {{ form.hidden_tag() }}
+              <div class="form-group {% if form.email.errors %} has-error{% endif -%}
+                                      {%- if form.email.flags.required %} required{% endif -%}">
                 <label for="email" class="floating-label">邮箱</label>
-                <input type="email" class="floating-control" id="email">
+                {{ form.email(class="floating-control", required=True, type="email") }}
+                {%- if form.email.errors %}
+                  {%- for error in form.email.errors %}
+                    <p class="help-block">{{error}}</p>
+                  {%- endfor %}
+                {% endif -%}
               </div>
-              <div class="form-group">
+              <div class="form-group {%- if form.password.flags.required %} required{% endif -%}">
                 <label for="password" class="floating-label">密码</label>
-                <input type="password" class="floating-control" id="password">
+                {{ form.password(class="floating-control", required=True) }}
               </div>
               <div class="form-group">
-                <button type="submit" class="btn btn-default btn-block btn-primary">登陆</button>
+                {{ form.submit(class="btn btn-default btn-block btn-primary") }}
               </div>
             </form>
           </div>
@@ -109,6 +123,27 @@
     <script src="{{url_for('static', filename='js/index.js')}}"></script>
     <script>
     $(document).ready(function($) {
+      // $('#submit').click(function(event) {
+      //     event.preventDefault();
+      //     $.ajax({
+      //         url: '/login',
+      //         dataType: 'json',
+      //         data: $('form').serialize(),
+      //         type: 'POST',
+      //         success: function(response) {
+      //             console.log(response['message']);
+      //             // window.location.href = '/admin';
+      //         },
+      //         error: function(error) {
+      //             // console.log(error);
+      //             alert(error['message']);
+      //             // window.location.reload();
+      //         }
+      //     });
+      // });
+      if($("#email").val()!=""){
+        $("#email").val("");
+      }
       $("input").focus(function(event) {
         $(this).prev().addClass("on-focus");
         $(this).addClass("on-focus");
