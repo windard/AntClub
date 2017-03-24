@@ -4,39 +4,47 @@ import os
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
+
 class Config:
     THREADED = True
     SECRET_KEY = os.environ.get('SECRET_KEY') or os.urandom(40)
+
+    # SQLALCHEMY
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     SQLALCHEMY_TRACK_MODIFICATIONS = True
     SQLALCHEMY_RECORD_QUERIES = True
+
+    # MAIL
     MAIL_SERVER = 'smtp.qq.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
-    FLASKY_MAIL_SUBJECT_PREFIX = '[XDANT]'
-    FLASKY_MAIL_SENDER = '1106911190@qq.com'
-    FLASKY_ADMIN = os.environ.get('FLASKY_ADMIN')
-    FLASKY_POSTS_PER_PAGE = 20
-    FLASKY_FOLLOWERS_PER_PAGES = 30
-    FLASKY_COMMENTS_PER_PAGE = 50
-    FLASKY_SLOW_DB_QUERY_TIME=0.5
+    XDANT_MAIL_SUBJECT_PREFIX = '[XDANT]'
+    XDANT_MAIL_SENDER = '1106911190@qq.com'
+
+    # XDANT
+    XDANT_ADMIN = os.environ.get('XDANT_ADMIN')
+    XDANT_POSTS_PER_PAGE = 20
+    XDANT_FOLLOWERS_PER_PAGES = 30
+    XDANT_COMMENTS_PER_PAGE = 50
+    XDANT_SLOW_DB_QUERY_TIME = 0.5
 
     @staticmethod
     def init_app(app):
         pass
 
+
 class DevelopmentConfig(Config):
-    HOST = '0.0.0.0'
-    POST = 8899
-    DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or 'mysql://www-data:www-data@localhost/xdant'
 
+
 class TestingConfig(Config):
-    TESTING = True
+    SERVER_NAME = 'localhost'
+    DEBUG = True
     WTF_CSRF_ENABLED = False
-    SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URL') or 'mysql://www-data:www-data@localhost/xdant'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URL') or 'mysql://www-data:www-data@localhost/test'
+
 
 class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'mysql://www-data:www-data@localhost/xdant'
@@ -46,7 +54,7 @@ class ProductionConfig(Config):
         Config.init_app(app)
 
         import logging
-        from logging.handlers import SMTPHandler 
+        from logging.handlers import SMTPHandler
         credentials = None
         secure = None
         if getattr(cls, 'MAIL_USERNAME', None) is not None:
@@ -54,23 +62,24 @@ class ProductionConfig(Config):
             if getattr(cls, 'MAIL_USE_TLS', None):
                 secure = ()
         mail_handler = SMTPHandler(
-            mailhost = (cls.MAIL_SERVER,cls.MAIL_PORT),
-            fromaddr = cls.FLASKY_MAIL_SENDER,
-            toaddr   = cls.FLASKY_ADMIN,
-            subject  = cls.FLASKY_MAIL_SUBJECT_PREFIX + 'Application Error',
-            credentials = credentials,
-            secure   = secure)
+            mailhost=(cls.MAIL_SERVER, cls.MAIL_PORT),
+            fromaddr=cls.XDANT_MAIL_SENDER,
+            toaddr=cls.XDANT_ADMIN,
+            subject=cls.XDANT_MAIL_SUBJECT_PREFIX + 'Application Error',
+            credentials=credentials,
+            secure=secure)
         mail_handler.setLevel(logging.ERROR)
         app.logger.addHandler(mail_handler)
 
-        from logging.handlers import SysLogHandler 
+        from logging.handlers import SysLogHandler
         syslog_handler = SysLogHandler()
         syslog_handler.setLevel(logging.WARNING)
         app.logger.addHandler(syslog_handler)
 
+
 config = {
-    'development':DevelopmentConfig,
-    'testing':TestingConfig,
-    'production':ProductionConfig,
-    'default':DevelopmentConfig
+    'development': DevelopmentConfig,
+    'testing': TestingConfig,
+    'production': ProductionConfig,
+    'default': DevelopmentConfig
 }
