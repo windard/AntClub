@@ -2,6 +2,9 @@
 
 西安电子科技大学学习互助社团
 
+[![Build Status](https://travis-ci.com/windard/AntClub.svg?token=spobLW7cfpqx95SyUxyc&branch=master)](https://travis-ci.org/windard/AntClub)
+
+
 ### 总结
 
 flask-login 中可以自定义 ValidationError 作为验证信息，但是这个验证信息使用 flask-wtf 自定义的表单样式就可以显示出来，如果自行定义就无法显示，不能做很好的自定义表单和 ajax。一直以为是在 flask-wtf 和 wtforms 这两个库中找寻，结果只看到定义 ValidationError ，而没有看到捕获异常的地方。终于在 flask-bootstrap 中看到 filed.error 属性，查看 flask 的 form 表单的 _fields 中每一个 filed 的属性，才终于明白，在定义了 ValidationError 之后，flask 会将验证消息放在 每一个 filed 的 error 属性中，flask-bootstrap 如果在看到 error 信息时就会对其进行处理。
