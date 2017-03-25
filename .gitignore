@@ -2,7 +2,6 @@
 *.log
 tmp/
 .tags
-.travis.yml
 .idea/
 .cache/
 .tags_sorted_by_file
