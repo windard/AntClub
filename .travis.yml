@@ -18,6 +18,7 @@ services:
 cache:
   directories:
     - $HOME/.pip-cache/
+    - /var/cache/apt/archives/
 env:
   global:
     - XDANT_ADMIN=windard@windard.com

@@ -54,7 +54,7 @@ def register():
         db.session.add(user)
         try:
             db.session.commit()
-        except Exception,e:
+        except Exception as e:
             return redirect(url_for("main.register"))
         else:
             flash("Register Successful ~ ", "success")
