@@ -53,3 +53,10 @@ def create_app(config_name):
     app.register_blueprint(api_blueprint, url_prefix='/api')
 
     return app
+
+
+def create_celery_app(config_name):
+    app = Flask(__name__)
+    app.config.from_object(config[config_name])
+    db.init_app(app)
+    return app

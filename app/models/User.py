@@ -114,6 +114,11 @@ class User(UserMixin, db.Model):
         s = Serializer(current_app.config['SECRET_KEY'], expires_in=expiration)
         return s.dumps({"id": self.id})
 
+    def send_mail(self):
+        from app.tasks import send_email
+        token = self.generate_auth_token()
+        send_email.delay(self.email, "Confirm Your Account", 'auth/confirm', user=self, token=token)
+
     @staticmethod
     def verify_auth_token(token):
         s = Serializer(current_app.config['SECRET_KEY'])

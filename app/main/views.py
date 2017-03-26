@@ -52,5 +52,18 @@ def admin():
 
 
 @main.route("/edit")
+@login_required
 def edit():
     return render_template("edit.html")
+
+
+@main.route('/confirm/<token>')
+@login_required
+def confirm(token):
+    if current_user.confirmed:
+        return redirect(url_for('main.admin'))
+    if current_user.confirm(token):
+        flash(u'您已成功激活账户', 'success')
+    else:
+        flash(u'(⊙o⊙)... token 已失效', 'danger')
+    return redirect(url_for('main.index'))

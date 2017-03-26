@@ -33,6 +33,14 @@ class Config:
     XDANT_COMMENTS_PER_PAGE = 50
     XDANT_SLOW_DB_QUERY_TIME = 0.5
 
+    # Celery
+    CELERY_BROKER_URL = 'redis://localhost:6379/0'
+    CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/1'
+    CELERY_TASK_SERIALIZER = 'msgpack'
+    CELERY_RESULT_SERIALIZER = 'json'
+    CELERY_TASK_RESULT_EXPIRES = 60 * 60 * 24
+    CELERY_ACCEPT_CONTENT = ['json', 'msgpack']
+    
     @staticmethod
     def init_app(app):
         pass
