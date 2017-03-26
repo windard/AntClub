@@ -34,7 +34,7 @@ class Config:
     XDANT_SLOW_DB_QUERY_TIME = 0.5
 
     # Celery
-    CELERY_BROKER_URL = 'redis://localhost:6379/0'
+    CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'
     CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/1'
     CELERY_TASK_SERIALIZER = 'msgpack'
     CELERY_RESULT_SERIALIZER = 'json'
@@ -49,4 +49,4 @@ class Config:
 class DevelopmentConfig(Config):
     THREADED = True
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://web:web@localhost/xdant'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://web:web@127.0.0.1/xdant'
