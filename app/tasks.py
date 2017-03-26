@@ -7,7 +7,7 @@ from flask_celery3 import make_celery
 
 from app import mail, create_celery_app
 
-celery_app = create_celery_app(os.getenv('XDANT_CELERY_CONFIG' or 'default'))
+celery_app = create_celery_app(os.getenv('XDANT_CELERY_CONFIG') or 'default')
 celery = make_celery(celery_app)
 
 
