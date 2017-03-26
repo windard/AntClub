@@ -3,14 +3,12 @@
 import unittest
 
 from app import create_app, db
-from app.models import Role
 
 
 class XdAntTestCase(unittest.TestCase):
 
     def setUp(self):
         db.create_all()
-        Role.insert_roles()
 
     def tearDown(self):
         db.session.remove()

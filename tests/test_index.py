@@ -1,6 +1,5 @@
 # coding=utf-8
 
-import unittest
 from tests import XdAntTestCase
 from flask import url_for
 

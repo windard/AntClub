@@ -1,167 +1,175 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AntClub</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/register.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container text-center">
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container text-center">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-toggle">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="/" class="navbar-brand"><strong>蚂蚁學社</strong></a>
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand"><strong>蚂蚁學社</strong></a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-toggle">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/">主页</a></li>
-            <li class="hovernav"><a href="/blog">博客</a></li>
-            <li class="hovernav"><a href="/data">资料</a></li>
-            <li class="hovernav"><a href="/about">关于</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/register"><span class="glyphicon glyphicon-tower" aria-hidden="true"></span>&nbsp;注册</a></li>
-            <li><a href="/login"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp;登陆</a></li>
-          </ul>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">主页</a></li>
+                <li class="hovernav"><a href="/blog">博客</a></li>
+                <li class="hovernav"><a href="/data">资料</a></li>
+                <li class="hovernav"><a href="/about">关于</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/register"><span class="glyphicon glyphicon-tower" aria-hidden="true"></span>&nbsp;注册</a>
+                </li>
+                <li><a href="/login"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp;登陆</a>
+                </li>
+            </ul>
         </div>
-      </div>
-    </nav>
-    <div class="site-warpper">
-      <div class="container row">
+    </div>
+</nav>
+<div class="site-warpper">
+    <div class="container row">
         <div class="col-md-7 text-center hidden-xs">
-          <p class="lead">加入蚂蚁学社，与千万学霸一起<br><br><strong>定当不负所托</strong></p>
+            <p class="lead">加入蚂蚁学社，与千万学霸一起<br><br><strong>定当不负所托</strong></p>
         </div>
         <div class="col-md-5 col-sm-12">
-          <!-- form -->
-          <div class="register-card">
-            <h3 class="text-center">现在登陆</h3>
-            <hr>            
-            {% for category, message in get_flashed_messages(with_categories=true) %}
-              <div class="alert alert-{{ category }} fade in" role="{{ category }}" style="margin-top:10px">
-                {{ message }}
-                <button type="button" class="close" aria-label="Close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
-              </div>
-            {% endfor %}
+            <!-- form -->
+            <div class="register-card">
+                <h3 class="text-center">现在登陆</h3>
+                <hr>
+                {% for category, message in get_flashed_messages(with_categories=true) %}
+                    <div class="alert alert-{{ category }} fade in" role="{{ category }}" style="margin-top:10px">
+                        {{ message }}
+                        <button type="button" class="close" aria-label="Close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span></button>
+                    </div>
+                {% endfor %}
 
-            <form action="" role="form" method="post" autocomplete="off">
-              {{ form.hidden_tag() }}
-              <div class="form-group {% if form.email.errors %} has-error{% endif -%}
+                <form action="" role="form" method="post" autocomplete="off">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group {% if form.email.errors %} has-error{% endif -%}
                                       {%- if form.email.flags.required %} required{% endif -%}">
-                <label for="email" class="floating-label">邮箱</label>
-                {{ form.email(class="floating-control", required=True, type="email") }}
-                {%- if form.email.errors %}
-                  {%- for error in form.email.errors %}
-                    <p class="help-block">{{error}}</p>
-                  {%- endfor %}
-                {% endif -%}
-              </div>
-              <div class="form-group {%- if form.password.flags.required %} required{% endif -%}">
-                <label for="password" class="floating-label">密码</label>
-                {{ form.password(class="floating-control", required=True) }}
-              </div>
-              <div class="form-group">
-                {{ form.submit(class="btn btn-default btn-block btn-primary") }}
-              </div>
-            </form>
-          </div>
+                        <label for="email" class="floating-label">邮箱</label>
+                        {{ form.email(class="floating-control", required=True, type="email") }}
+                        {%- if form.email.errors %}
+                            {%- for error in form.email.errors %}
+                                <p class="help-block">{{ error }}</p>
+                            {%- endfor %}
+                        {% endif -%}
+                    </div>
+                    <div class="form-group {%- if form.password.flags.required %} required{% endif -%}">
+                        <label for="password" class="floating-label">密码</label>
+                        {{ form.password(class="floating-control", required=True) }}
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-default btn-block btn-primary" value="登陆">
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
     </div>
-    <footer class="footer">
-      <div class="container-fluid">
+</div>
+<footer class="footer">
+    <div class="container-fluid">
         <div class="container row">
-          <div class="col-md-4 text-left">
-            <h3>联系我们</h3>
-            <ul class="list-unstyled">
-              <li>Email:<a href="mailto:1106911190@qq.com?subject=feedback" "email me">1106911190@qq.com</a></li>
-              <li>RENREN:<a href="http://www.baidu.com" title="蚂蚁学社">蚂蚁学社</a></li>
-              <li>QQ:1106911190</li>
-              <li>地址：陕西省西安市西安电子科技大学长安校区</li>
-            </ul>
-          </div>
-          <div class="col-md-4 text-left">
-            <h3>本站链接</h3>
-            <ul class="list-unstyled">
-              <li><a href="/blog">蚂蚁博客</a></li>
-              <li><a href="/data">蚂蚁资料</a></li>
-              <li><a href="/about">关于我们</a></li>
-              <li><a href="/register">加入我们</a></li>
-            </ul>
-          </div>
-          <div class="col-md-2">
-            <img src="{{url_for('static', filename='images/qrcode.jpg')}}" alt="qrcode" class="img-responsive">
-          </div>
-          <div class="col-md-12 text-center copyright">
-          <hr>
-            <p class="small">All RIGHT RESERVED , Build By <a href="https://windard.com">Windard</a> </p>
-          </div>
+            <div class="col-md-4 text-left">
+                <h3>联系我们</h3>
+                <ul class="list-unstyled">
+                    <li>Email:<a href="mailto:1106911190@qq.com?subject=feedback"
+                                 target="email me">1106911190@qq.com</a></li>
+                    <li>RENREN:<a href="http://www.baidu.com" title="蚂蚁学社">蚂蚁学社</a></li>
+                    <li>QQ:1106911190</li>
+                    <li>地址：陕西省西安市西安电子科技大学长安校区</li>
+                </ul>
+            </div>
+            <div class="col-md-4 text-left">
+                <h3>本站链接</h3>
+                <ul class="list-unstyled">
+                    <li><a href="/blog">蚂蚁博客</a></li>
+                    <li><a href="/data">蚂蚁资料</a></li>
+                    <li><a href="/about">关于我们</a></li>
+                    <li><a href="/register">加入我们</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <img src="{{ url_for('static', filename='images/qrcode.jpg') }}" alt="qrcode" class="img-responsive">
+            </div>
+            <div class="col-md-12 text-center copyright">
+                <hr>
+                <p class="small">All RIGHT RESERVED , Build By <a href="https://windard.com">Windard</a></p>
+            </div>
         </div>
-      </div>
-    </footer>
-    <div id="back-to-top" class="hidden-xs">▲</div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="{{url_for('static', filename='js/jquery-1.11.3.min.js')}}"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
-    <script src="{{url_for('static', filename='js/index.js')}}"></script>
-    <script>
-    $(document).ready(function($) {
-      // $('#submit').click(function(event) {
-      //     event.preventDefault();
-      //     $.ajax({
-      //         url: '/login',
-      //         dataType: 'json',
-      //         data: $('form').serialize(),
-      //         type: 'POST',
-      //         success: function(response) {
-      //             console.log(response['message']);
-      //             // window.location.href = '/admin';
-      //         },
-      //         error: function(error) {
-      //             // console.log(error);
-      //             alert(error['message']);
-      //             // window.location.reload();
-      //         }
-      //     });
-      // });
-      if($("#email").val()!=""){
-        $("#email").val("");
-      }
-      $("input").focus(function(event) {
-        $(this).prev().addClass("on-focus");
-        $(this).addClass("on-focus");
-      });
-      $("input").blur(function(event) {
-        if($(this).val()){
-          $(this).prev().removeClass("on-focus");
-          $(this).removeClass("on-focus");
-          $(this).prev().addClass("inputed");
-          $(this).addClass("inputed");
-        }else{
-          $(this).prev().removeClass("on-focus");
-          $(this).removeClass("on-focus");
-          $(this).prev().removeClass("inputed");
-          $(this).removeClass("inputed");
+    </div>
+</footer>
+<div id="back-to-top" class="hidden-xs">▲</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{{ url_for('static', filename='js/jquery-1.11.3.min.js') }}"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+<script>
+    $(document).ready(function ($) {
+        var email = $('#email');
+        var input = $('input');
+        if (email.val() != '') {
+            email.val('');
         }
-      });
+        input.focus(function (event) {
+            $(this).prev().addClass("on-focus");
+            $(this).addClass("on-focus");
+        });
+        input.blur(function (event) {
+            if ($(this).val()) {
+                $(this).prev().removeClass("on-focus");
+                $(this).removeClass("on-focus");
+                $(this).prev().addClass("inputed");
+                $(this).addClass("inputed");
+            } else {
+                $(this).prev().removeClass("on-focus");
+                $(this).removeClass("on-focus");
+                $(this).prev().removeClass("inputed");
+                $(this).removeClass("inputed");
+            }
+        });
+        $('form').on('submit', function(event){
+            event.preventDefault();
+            $.ajax({
+                url: '/api/sessions',
+                dataType: 'json',
+                data: $('form').serialize(),
+                type: 'POST',
+                success: function(response) {
+{#                    console.log(response['code']);#}
+                    if (response['status'] == 1000) {
+                        window.location.href = '/admin';
+                    }
+                },
+                error: function(error) {
+                    // console.log(error);
+                    alert('Internet Error , Please Try Again Later .');
+                    // window.location.reload();
+                }
+            });
+        })
     });
-    </script>
-  </body>
+</script>
+</body>
 </html>

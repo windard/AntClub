@@ -109,7 +109,7 @@
           <div class="col-md-4 text-left">
             <h3>联系我们</h3>
             <ul class="list-unstyled">
-              <li>Email:<a href="mailto:1106911190@qq.com?subject=feedback" "email me">1106911190@qq.com</a></li>
+              <li>Email:<a href="mailto:1106911190@qq.com?subject=feedback" target="email me">1106911190@qq.com</a></li>
               <li>RENREN:<a href="http://www.baidu.com" title="蚂蚁学社">蚂蚁学社</a></li>
               <li>QQ:1106911190</li>
               <li>地址：陕西省西安市西安电子科技大学长安校区</li>
@@ -142,29 +142,57 @@
     <script src="{{url_for('static', filename='js/index.js')}}"></script>
     <script>
     $(document).ready(function($) {
-      if($("#username").val()!=""){
-        $("#username").val("");
-      }
-      if($("#email").val()!=""){
-        $("#email").val("");
-      }
-      $("input").focus(function(event) {
-        $(this).prev().addClass("on-focus");
-        $(this).addClass("on-focus");
-      });
-      $("input").blur(function(event) {
-        if($(this).val()){
-          $(this).prev().removeClass("on-focus");
-          $(this).removeClass("on-focus");
-          $(this).prev().addClass("inputed");
-          $(this).addClass("inputed");
-        }else{
-          $(this).prev().removeClass("on-focus");
-          $(this).removeClass("on-focus");
-          $(this).prev().removeClass("inputed");
-          $(this).removeClass("inputed");
+        var username = $('#username');
+        var email = $('#email');
+        var input = $('input');
+        if (username.val() != '') {
+            username.val('');
         }
-      });
+        if (email.val() != '') {
+            email.val('');
+        }
+        input.focus(function (event) {
+            $(this).prev().addClass("on-focus");
+            $(this).addClass("on-focus");
+        });
+        input.blur(function (event) {
+            if ($(this).val()) {
+                $(this).prev().removeClass("on-focus");
+                $(this).removeClass("on-focus");
+                $(this).prev().addClass("inputed");
+                $(this).addClass("inputed");
+            } else {
+                $(this).prev().removeClass("on-focus");
+                $(this).removeClass("on-focus");
+                $(this).prev().removeClass("inputed");
+                $(this).removeClass("inputed");
+            }
+        });
+
+        $('form').on('submit', function(event){
+            event.preventDefault();
+            $.ajax({
+                url: '/api/register',
+                dataType: 'json',
+                data: $('form').serialize(),
+                type: 'POST',
+                success: function(response) {
+                    if (response['status'] == 1000) {
+                        window.location.href = '/login';
+                    }
+                    if (response['status'] == 1001 || response['status'] == 1008) {
+                        $('#email').parent().addClass('has-error');
+                        $('#email').append(`<p class="help-block">response['message']</p>`);
+                    }
+
+                },
+                error: function(error) {
+                    alert('Internet Error , Please Try Again Later');
+{#                    alert(error['message']);#}
+
+                }
+            });
+        })
     });
     </script>
   </body>

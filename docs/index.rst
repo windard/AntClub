@@ -14,7 +14,7 @@ API 和使用手册
 
    xdant/index.rst
    xdant/auth.rst
-   xdant/main.rst
+   xdant/api.rst
 
 
 更新日志

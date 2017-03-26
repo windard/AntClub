@@ -6,4 +6,6 @@ tmp/
 .cache/
 .tags_sorted_by_file
 
+__pycache__/
 docs/_build/
+config/production.py
