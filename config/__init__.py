@@ -2,11 +2,16 @@
 
 from config.default import DevelopmentConfig
 from config.test import TestingConfig
-from config.production import ProductionConfig
 
 config = {
     'development': DevelopmentConfig,
     'testing': TestingConfig,
-    'production': ProductionConfig,
     'default': DevelopmentConfig
 }
+
+try:
+    from config.production import ProductionConfig
+    config.update(production=ProductionConfig)
+except:
+    pass
+    

@@ -3,7 +3,6 @@
 from flask import request, jsonify
 
 from app.api import api
-
 from app.utils import response_dict
 from app.utils.forms import SessionForm, RegistrationForm
 from app.utils.constants import SUCCESS, LOGIN_FAILED

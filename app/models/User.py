@@ -110,9 +110,15 @@ class User(UserMixin, db.Model):
     def get_id(self):
         return u'%s:%s' % (self.role, self.id)
 
-    def generate_auth_token(self, expiration):
+    def generate_auth_token(self, expiration=3600):
         s = Serializer(current_app.config['SECRET_KEY'], expires_in=expiration)
         return s.dumps({"id": self.id})
+
+    def send_mail(self):
+        from app.tasks import send_email
+        token = self.generate_auth_token()
+        token_url = url_for('main.confirm', token=token, _external=True)
+        send_email.delay(self.email, "Confirm Your Account", 'auth/confirm', username=self.username, token_url=token_url)
 
     @staticmethod
     def verify_auth_token(token):

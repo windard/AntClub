@@ -5,7 +5,7 @@ import unittest
 from app import create_app, db
 
 
-class XdAntTestCase(unittest.TestCase):
+class XDANTTestCase(unittest.TestCase):
 
     def setUp(self):
         db.create_all()

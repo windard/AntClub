@@ -31,3 +31,20 @@ csrf 不是这样用的，可以使用 ajax，因为没有验证码，所以使�
 可以使用 Github 的 webhook 发送 POST 请求，自动升级，如果可以做到 项目里最好，不能也不强求，可以使用 socket 。
 
 这个项目就是使用 flask-privilege 做权限认证，用户的话，就使用一个用户体系。
+
+2017-3-26
+
+怪不得需要使用 mock，原来是因为在生成用户的时候有地方需要使用到 Celery ，就不能调用 Celery ，只能mock 一下。
+
+需要接下来使用 redis 做登陆限制了，还有就是把那个啥就是就是 两个 password 去掉。
+
+2017-3-27
+
+真的遇到了 Github Issue 里的那个问题，完蛋了。。。
+
+2017-3-28
+
+```
+export XDANT_CELERY_CONFIG=production
+nohup celery -A app.tasks worker -l info &
+```

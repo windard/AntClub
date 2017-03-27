@@ -11,7 +11,8 @@ from wtforms.validators import Email, DataRequired, ValidationError
 from app import db
 from app.models import User
 from app.utils import response_dict
-from app.utils.constants import EMAIL_INVALID, PASSWORD_NOT_MATCH, DATA_REQUIRED, EMAIL_USED, USERNAME_USED, CSRF_INVALID
+from app.utils.constants import EMAIL_INVALID, PASSWORD_NOT_MATCH, DATA_REQUIRED, EMAIL_USED, USERNAME_USED, \
+    CSRF_INVALID
 from app.utils.validators import NickName, EqualTo
 
 
@@ -77,3 +78,5 @@ class RegistrationForm(Form):
         user = User(username=self.username.data, email=self.email.data, password=self.password.data)
         db.session.add(user)
         db.session.commit()
+        user.send_mail()
+        return user

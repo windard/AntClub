@@ -1,5 +1,7 @@
 *.pyc
 *.log
+nohup.out
+
 tmp/
 .tags
 .idea/
