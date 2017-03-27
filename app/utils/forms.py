@@ -15,6 +15,7 @@ from app.utils.constants import EMAIL_INVALID, PASSWORD_NOT_MATCH, DATA_REQUIRED
     CSRF_INVALID
 from app.utils.validators import NickName, EqualTo
 
+
 class Form(FlaskForm):
     """docstring for Form"""
 

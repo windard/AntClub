@@ -41,3 +41,10 @@ csrf 不是这样用的，可以使用 ajax，因为没有验证码，所以使�
 2017-3-27
 
 真的遇到了 Github Issue 里的那个问题，完蛋了。。。
+
+2017-3-28
+
+```
+export XDANT_CELERY_CONFIG=production
+nohup celery -A app.tasks worker -l info &
+```
