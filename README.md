@@ -2,7 +2,7 @@
 
 西安电子科技大学学习互助社团
 
-[![Build Status](https://travis-ci.com/windard/AntClub.svg?token=spobLW7cfpqx95SyUxyc&branch=master)](https://travis-ci.org/windard/AntClub)
+[![Build Status](https://travis-ci.com/windard/AntClub.svg?token=spobLW7cfpqx95SyUxyc&branch=master)](https://travis-ci.com/windard/AntClub)
 
 
 ### 总结

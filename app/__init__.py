@@ -10,6 +10,7 @@ from flask_pagedown import PageDown
 from flask_avatar import Avatar
 from flask_principal import Principal
 import flask_whooshalchemyplus
+from flask_redis import FlaskRedis
 
 from config import config
 
@@ -26,6 +27,7 @@ login_manager.login_message_category = 'warning'
 
 page_down = PageDown()
 avatar = Avatar()
+redis_store = FlaskRedis()
 
 
 def create_app(config_name):
@@ -42,6 +44,7 @@ def create_app(config_name):
     page_down.init_app(app)
     avatar.init_app(app)
     flask_whooshalchemyplus.init_app(app)
+    redis_store.init_app(app)
 
     from app.models import identity_config
     identity_config(app)

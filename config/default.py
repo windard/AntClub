@@ -40,6 +40,9 @@ class Config:
     CELERY_RESULT_SERIALIZER = 'json'
     CELERY_TASK_RESULT_EXPIRES = 60 * 60 * 24
     CELERY_ACCEPT_CONTENT = ['json', 'msgpack']
+
+    # Redis
+    REDIS_URL = "redis://127.0.0.1:6379/0"
     
     @staticmethod
     def init_app(app):

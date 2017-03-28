@@ -11,6 +11,7 @@ DATA_REQUIRED = 1006
 USERNAME_USED = 1007
 EMAIL_USED = 1008
 CSRF_INVALID = 1009
+LOGIN_OVERTIME = 10010
 
 constants = {
     SUCCESS: 'success',
@@ -23,7 +24,8 @@ constants = {
     DATA_REQUIRED: u'数据不完全',
     EMAIL_USED: u'邮箱已被注册',
     USERNAME_USED: u'用户名已被注册',
-    CSRF_INVALID: u'CSRF 错误'
+    CSRF_INVALID: u'CSRF 错误',
+    LOGIN_OVERTIME: u'错误登陆次数过多'
 }
 
 USER_PREFIX = 'USER'
