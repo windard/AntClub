@@ -1,6 +1,7 @@
 # coding=utf-8
 
 import os
+from flask import render_template
 
 COV = None
 if os.environ.get("XDANT_COVERAGE"):
@@ -17,6 +18,11 @@ from flask_migrate import Migrate, MigrateCommand
 app = create_app(os.getenv('XDANT_CONFIG') or 'default')
 manager = Manager(app)
 migrate = Migrate(app, db)
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
 
 
 def make_shell_context():
