@@ -1,0 +1,133 @@
+html,body{
+    height: 100%;
+    background-color: #e9f0f5;
+}
+body{
+	color: #5a5a5a;
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+	padding-top: 51px;
+	font-family: Lato, "Heiti SC", "Hiragino Sans GB", STHeiti, "Source Han Sans CN", "WenQuanYi Zen Hei", "WenQuanYi Micro Hei", MicroSoft YaHei, sans-serif;
+}
+html::-webkit-scrollbar{
+    width:8px;
+    background-color:#ddd;
+    transition: all ease-in-out 0.5s;
+}
+html::-webkit-scrollbar-thumb{
+    background-color:#aaa;
+    border-radius:3px;
+}
+.hovernav:hover{
+	background:#B46969;
+}
+.bar{
+    width: 30px;
+    height: 2px;
+    border: medium none;
+    background: none repeat scroll 0% 0% #5A2929;
+    margin: 20px auto;
+}
+.data-head{
+    background-image: url("../images/field-background.jpg");
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: white;
+    margin-bottom: 0;
+}
+.slogan{
+    padding: 18px 0px 18px;
+    background: #F2E4E4;
+    color: #B46969;
+}
+.data{
+    padding: 3em 0;
+    background-color: #E7E4E4;
+}
+.data a.data-block{
+    /*cursor: pointer;*/
+    outline: none;
+    border: none;
+    padding-top: 5px;
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+}
+.data a.data-block img{
+    /*position: absolute;*/
+    /*clip:rect(30px 150px 200px 50px);*/
+    overflow: hidden;
+    max-width: 250px;
+    max-height: 140px;
+}
+.data a.data-block:hover{
+    box-shadow: rgba(198,197,197,0.9) 5px 5px 20px;
+}
+.data .container section h3{
+    text-indent: 1em;
+}
+footer{
+    color: #fff;
+    background-color:#20283C;
+}
+footer .container-fluid .container{
+    margin: 0 auto 0;
+    padding: 60px 0 10px;
+    background-color: #20283C;
+}
+footer .container-fluid .container h3{
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+footer .container-fluid .container ul{
+    margin: 10px 0;
+}
+footer .container-fluid .container ul li{
+    font-size: 15px;
+    padding-top: 3px;
+}
+footer .container-fluid .container a{
+    color: #fff;
+    text-decoration: none;
+}
+footer .container-fluid .container a:hover{
+    color: #1B9FC3;
+}
+footer .copyright{
+    margin-top: 30px;
+    color: white;
+}
+#back-to-top{
+    border-radius: 50%;
+    box-shadow: 5px 5px 5px #ccc;
+    transition: all ease-in-out 0.5s;
+    opacity: 0.7;
+    display: none;
+    width: 40px;
+    height: 40px;
+    font-size: 26px;
+    line-height: 32px;
+    font-family: verdana, arial;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    _position: absolute;
+    bottom: 100px;
+    _bottom: "auto";
+    cursor: pointer;
+    opacity: .6;
+    filter: Alpha(opacity=60);
+    right: 50px;
+}
+#back-to-top:hover{
+    box-shadow: 5px 5px 15px #ccc;
+    opacity: 1;
+}

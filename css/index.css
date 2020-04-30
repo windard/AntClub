@@ -36,6 +36,7 @@ html::-webkit-scrollbar-thumb{
 	background-position: center;
 	-webkit-background-size: cover;
 	background-size: cover;
+	/*background-image: url("../images/girl-1246690.jpg");*/
 	background-image: url("../images/main-background3.jpg");
 }
 .warpper-center{
